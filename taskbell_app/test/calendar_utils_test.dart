@@ -48,5 +48,33 @@ void main() {
       expect(formatTime(DateTime(2026, 10, 20, 9, 5)), '09:05');
       expect(formatTime(DateTime(2026, 10, 20, 23, 59)), '23:59');
     });
+
+    test('buildWeekDays returns Monday to Sunday around the anchor', () {
+      // 22 Oktober 2026 adalah hari Kamis.
+      final days = buildWeekDays(DateTime(2026, 10, 22));
+
+      expect(days, hasLength(7));
+      expect(days.first, DateTime(2026, 10, 19));
+      expect(days.first.weekday, DateTime.monday);
+      expect(days.last, DateTime(2026, 10, 25));
+      expect(days.last.weekday, DateTime.sunday);
+      expect(days.contains(DateTime(2026, 10, 22)), isTrue);
+    });
+
+    test('buildWeekDays handles a week spanning two months', () {
+      final days = buildWeekDays(DateTime(2026, 11, 1));
+
+      expect(days.first, DateTime(2026, 10, 26));
+      expect(days.last, DateTime(2026, 11, 1));
+      expect(days.map((day) => day.weekday).toSet(), {
+        DateTime.monday,
+        DateTime.tuesday,
+        DateTime.wednesday,
+        DateTime.thursday,
+        DateTime.friday,
+        DateTime.saturday,
+        DateTime.sunday,
+      });
+    });
   });
 }

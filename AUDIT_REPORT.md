@@ -23,7 +23,7 @@ implementasi saat itu.
 | Backup/restore | Berfungsi | validasi ketat, pratinjau, pemilih file, transaksi |
 | Database lokal | Terenkripsi | SQLCipher, kunci di secure storage, migrasi otomatis |
 | Tema terang/gelap | Berfungsi | palet semantik + persistensi |
-| Kalender | Berfungsi (dasar) | tampilan bulanan, penanda tugas, daftar per hari |
+| Kalender | Berfungsi | tampilan bulanan & mingguan, penanda tugas, daftar per hari |
 | Aksesibilitas | Berfungsi (dasar) | target 48 dp, semantik, skala 200%, kontras AA |
 | Ikon | Berfungsi | 25 ikon SVG Lucide (ISC), bukan Material Icons |
 | Migrasi database | Berfungsi | 2 migrasi Prisma + `db:deploy` |

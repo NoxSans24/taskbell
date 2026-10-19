@@ -176,8 +176,8 @@ ke GitHub.
 
 ## Batasan yang diketahui
 
-- Kalender menyediakan tampilan bulanan dasar; belum ada tampilan mingguan
-  atau agenda berulang.
+- Kalender menyediakan tampilan bulanan dan mingguan; agenda berulang serta
+  integrasi kalender pihak ketiga belum ada.
 - Pengingat Telegram dikirim server setiap menit untuk tugas yang **sudah
   tersinkron** dan tenggatnya tiba. Tugas yang belum pernah disinkronkan tetap
   mendapat notifikasi lokal, bukan Telegram.

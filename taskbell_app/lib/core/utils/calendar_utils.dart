@@ -59,3 +59,14 @@ String formatTime(DateTime date) {
   final minute = date.minute.toString().padLeft(2, '0');
   return '$hour:$minute';
 }
+
+/// Tujuh hari dalam minggu yang sama, dimulai Senin.
+List<DateTime> buildWeekDays(DateTime anchor) {
+  final day = dayKey(anchor);
+  final monday = DateTime(day.year, day.month, day.day - (day.weekday - 1));
+
+  return List<DateTime>.generate(
+    7,
+    (index) => DateTime(monday.year, monday.month, monday.day + index),
+  );
+}

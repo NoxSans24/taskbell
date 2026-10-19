@@ -9,7 +9,7 @@ Diperbarui: 20 Oktober 2026
 - [x] Autentikasi: registrasi, login, sesi tersimpan, logout
 - [x] CRUD tugas + pencarian + filter kategori + statistik nyata
 - [x] CRUD kategori (tambah, ubah nama, hapus dengan pengaman)
-- [x] Kalender bulanan dengan penanda tugas dan daftar per hari
+- [x] Kalender bulanan dan mingguan dengan penanda tugas dan daftar per hari
 - [x] Aksesibilitas dasar: target sentuh 48 dp, label semantik, tahan skala
       teks 200%, kontras WCAG AA terverifikasi
 - [x] Ikon UI memakai SVG (set Lucide, lisensi ISC)
@@ -25,7 +25,7 @@ Diperbarui: 20 Oktober 2026
 
 ## Belum selesai
 
-- [ ] Tampilan kalender mingguan dan agenda berulang
+- [ ] Agenda berulang dan integrasi kalender pihak ketiga
 - [ ] Pengingat Telegram untuk multi-instance server
 - [ ] Subtask, tugas berulang, analitik (tahap lanjutan PRD)
 

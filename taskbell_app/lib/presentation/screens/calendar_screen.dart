@@ -8,6 +8,8 @@ import 'package:taskbell_app/presentation/screens/add_edit_task_screen.dart';
 import 'package:taskbell_app/presentation/widgets/app_icon.dart';
 import 'package:taskbell_app/presentation/widgets/comic_components.dart';
 
+enum _CalendarView { month, week }
+
 class CalendarScreen extends ConsumerStatefulWidget {
   const CalendarScreen({super.key});
 
@@ -18,6 +20,8 @@ class CalendarScreen extends ConsumerStatefulWidget {
 class _CalendarScreenState extends ConsumerState<CalendarScreen> {
   late DateTime _visibleMonth;
   late DateTime _selectedDay;
+  late DateTime _weekAnchor;
+  _CalendarView _view = _CalendarView.month;
 
   @override
   void initState() {
@@ -25,15 +29,37 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
     final today = dayKey(DateTime.now());
     _visibleMonth = DateTime(today.year, today.month);
     _selectedDay = today;
+    _weekAnchor = today;
   }
 
-  void _changeMonth(int delta) {
-    final next = DateTime(_visibleMonth.year, _visibleMonth.month + delta);
+  void _changePeriod(int delta) {
+    if (_view == _CalendarView.month) {
+      final next = DateTime(_visibleMonth.year, _visibleMonth.month + delta);
+      setState(() {
+        _visibleMonth = next;
+        if (_selectedDay.year != next.year ||
+            _selectedDay.month != next.month) {
+          _selectedDay = DateTime(next.year, next.month, 1);
+        }
+      });
+      return;
+    }
+
     setState(() {
-      _visibleMonth = next;
-      if (_selectedDay.year != next.year || _selectedDay.month != next.month) {
-        _selectedDay = DateTime(next.year, next.month, 1);
-      }
+      final days = buildWeekDays(_weekAnchor);
+      final monday = days.first;
+      final nextMonday = DateTime(
+        monday.year,
+        monday.month,
+        monday.day + (7 * delta),
+      );
+      _weekAnchor = nextMonday;
+      final offset = _selectedDay.weekday - DateTime.monday;
+      _selectedDay = DateTime(
+        nextMonday.year,
+        nextMonday.month,
+        nextMonday.day + offset,
+      );
     });
   }
 
@@ -42,7 +68,21 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
     setState(() {
       _visibleMonth = DateTime(today.year, today.month);
       _selectedDay = today;
+      _weekAnchor = today;
     });
+  }
+
+  String _weekRangeLabel() {
+    final days = buildWeekDays(_weekAnchor);
+    final first = days.first;
+    final last = days.last;
+
+    if (first.month == last.month) {
+      return '${first.day}–${last.day} ${monthName(first.month)} ${last.year}';
+    }
+
+    return '${first.day} ${monthName(first.month)} – '
+        '${last.day} ${monthName(last.month)} ${last.year}';
   }
 
   @override
@@ -92,56 +132,97 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            _buildMonthHeader(palette),
-            const SizedBox(height: 12),
-            _buildWeekdayHeader(palette),
-            const SizedBox(height: 4),
-            _buildMonthGrid(palette, tasksByDay, today),
-            const SizedBox(height: 24),
-            Text(
-              '${_selectedDay.day} ${monthName(_selectedDay.month)} '
-              '${_selectedDay.year}',
-              style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 16),
+            SegmentedButton<_CalendarView>(
+              key: const ValueKey('calendar-view-toggle'),
+              showSelectedIcon: false,
+              segments: const [
+                ButtonSegment(
+                  value: _CalendarView.month,
+                  label: Text('Bulan'),
+                ),
+                ButtonSegment(
+                  value: _CalendarView.week,
+                  label: Text('Minggu'),
+                ),
+              ],
+              selected: {_view},
+              onSelectionChanged: (selection) {
+                setState(() {
+                  _view = selection.first;
+                  if (_view == _CalendarView.week) {
+                    _weekAnchor = _selectedDay;
+                  } else {
+                    _visibleMonth =
+                        DateTime(_selectedDay.year, _selectedDay.month);
+                  }
+                });
+              },
             ),
             const SizedBox(height: 12),
-            if (selectedTasks.isEmpty)
-              ComicCard(
-                padding: const EdgeInsets.all(16),
-                child: Text(
-                  'Tidak ada tugas pada tanggal ini.',
-                  style: TextStyle(color: palette.muted),
-                ),
-              )
-            else
-              ...selectedTasks.map(
-                (task) => Padding(
-                  padding: const EdgeInsets.only(bottom: 12),
-                  child: _buildTaskTile(palette, task),
+            _buildHeader(palette),
+            const SizedBox(height: 12),
+            if (_view == _CalendarView.month) ...[
+              _buildWeekdayHeader(palette),
+              const SizedBox(height: 4),
+              _buildMonthGrid(palette, tasksByDay, today),
+              const SizedBox(height: 24),
+              Text(
+                '${_selectedDay.day} ${monthName(_selectedDay.month)} '
+                '${_selectedDay.year}',
+                style: const TextStyle(
+                  fontWeight: FontWeight.w900,
+                  fontSize: 16,
                 ),
               ),
+              const SizedBox(height: 12),
+              if (selectedTasks.isEmpty)
+                ComicCard(
+                  padding: const EdgeInsets.all(16),
+                  child: Text(
+                    'Tidak ada tugas pada tanggal ini.',
+                    style: TextStyle(color: palette.muted),
+                  ),
+                )
+              else
+                ...selectedTasks.map(
+                  (task) => Padding(
+                    padding: const EdgeInsets.only(bottom: 12),
+                    child: _buildTaskCard(palette, task),
+                  ),
+                ),
+            ] else
+              _buildWeekView(palette, tasksByDay, today),
           ],
         ),
       ),
     );
   }
 
-  Widget _buildMonthHeader(AppPalette palette) {
+  Widget _buildHeader(AppPalette palette) {
+    final title = _view == _CalendarView.month
+        ? '${monthName(_visibleMonth.month)} ${_visibleMonth.year}'
+        : _weekRangeLabel();
+
     return Row(
       children: [
         Expanded(
           child: Text(
-            '${monthName(_visibleMonth.month)} ${_visibleMonth.year}',
-            style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 20),
+            title,
+            style: const TextStyle(fontWeight: FontWeight.w900, fontSize: 18),
           ),
         ),
         IconButton(
-          tooltip: 'Bulan sebelumnya',
-          onPressed: () => _changeMonth(-1),
+          tooltip: _view == _CalendarView.month
+              ? 'Bulan sebelumnya'
+              : 'Minggu sebelumnya',
+          onPressed: () => _changePeriod(-1),
           icon: AppIcon(AppIcons.chevronLeft, color: palette.ink),
         ),
         IconButton(
-          tooltip: 'Bulan berikutnya',
-          onPressed: () => _changeMonth(1),
+          tooltip: _view == _CalendarView.month
+              ? 'Bulan berikutnya'
+              : 'Minggu berikutnya',
+          onPressed: () => _changePeriod(1),
           icon: AppIcon(AppIcons.chevronRight, color: palette.ink),
         ),
         TextButton(
@@ -191,6 +272,7 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
     final weeks = buildMonthGrid(_visibleMonth.year, _visibleMonth.month);
 
     return Column(
+      key: const ValueKey('month-grid'),
       children: [
         for (final week in weeks)
           Row(
@@ -269,11 +351,131 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
     );
   }
 
-  Widget _buildTaskTile(AppPalette palette, TaskModel task) {
+  Widget _buildWeekView(
+    AppPalette palette,
+    Map<DateTime, List<TaskModel>> tasksByDay,
+    DateTime today,
+  ) {
+    final days = buildWeekDays(_weekAnchor);
+
+    return Column(
+      key: const ValueKey('week-view'),
+      children: [
+        for (final day in days) ...[
+          _buildWeekDayCard(palette, day, tasksByDay, today),
+          const SizedBox(height: 12),
+        ],
+      ],
+    );
+  }
+
+  Widget _buildWeekDayCard(
+    AppPalette palette,
+    DateTime day,
+    Map<DateTime, List<TaskModel>> tasksByDay,
+    DateTime today,
+  ) {
+    final dayTasks = tasksByDay[dayKey(day)] ?? const <TaskModel>[];
+    final isToday = dayKey(day) == today;
+    final canAdd = !dayKey(day).isBefore(today);
+    final isSelected = dayKey(day) == dayKey(_selectedDay);
+
+    return ComicCard(
+      padding: const EdgeInsets.all(12),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: InkWell(
+                  onTap: () => setState(() => _selectedDay = dayKey(day)),
+                  borderRadius: BorderRadius.circular(6),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 4),
+                    child: Row(
+                      children: [
+                        Text(
+                          weekdayLabel(day.weekday),
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: isSelected ? palette.primary : palette.muted,
+                          ),
+                        ),
+                        const SizedBox(width: 8),
+                        Text(
+                          '${day.day} ${monthName(day.month)}',
+                          style: const TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        if (isToday) ...[
+                          const SizedBox(width: 8),
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 8,
+                              vertical: 2,
+                            ),
+                            decoration: BoxDecoration(
+                              color: palette.secondarySoft,
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(color: palette.border),
+                            ),
+                            child: const Text(
+                              'Hari ini',
+                              style: TextStyle(fontSize: 10),
+                            ),
+                          ),
+                        ],
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              if (canAdd)
+                IconButton(
+                  tooltip: 'Tambah tugas ${day.day}/${day.month}',
+                  visualDensity: VisualDensity.compact,
+                  icon: AppIcon(AppIcons.plus, size: 18, color: palette.ink),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            AddEditTaskScreen(initialDate: day),
+                      ),
+                    );
+                  },
+                ),
+            ],
+          ),
+          if (dayTasks.isEmpty)
+            Padding(
+              padding: const EdgeInsets.only(left: 4, top: 2),
+              child: Text(
+                'Tidak ada tugas.',
+                style: TextStyle(fontSize: 12, color: palette.muted),
+              ),
+            )
+          else
+            ...dayTasks.map((task) => _buildTaskRow(palette, task)),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildTaskCard(AppPalette palette, TaskModel task) {
+    return ComicCard(
+      child: Padding(
+        padding: const EdgeInsets.all(12),
+        child: _buildTaskRow(palette, task),
+      ),
+    );
+  }
+
+  Widget _buildTaskRow(AppPalette palette, TaskModel task) {
     final isCompleted = task.status == TaskStatus.completed;
     final dueDate = task.dueDate!;
 
-    return ComicCard(
+    return InkWell(
       onTap: () {
         Navigator.push(
           context,
@@ -281,33 +483,37 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
               builder: (context) => AddEditTaskScreen(task: task)),
         );
       },
-      padding: const EdgeInsets.all(16),
-      child: Row(
-        children: [
-          AppIcon(
-            isCompleted ? AppIcons.circleCheck : AppIcons.clock,
-            color: isCompleted ? palette.success : palette.primary,
-          ),
-          const SizedBox(width: 12),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  task.title,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    decoration: isCompleted ? TextDecoration.lineThrough : null,
-                  ),
-                ),
-                Text(
-                  '${formatTime(dueDate)} • ${task.category}',
-                  style: TextStyle(fontSize: 12, color: palette.muted),
-                ),
-              ],
+      borderRadius: BorderRadius.circular(8),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 4),
+        child: Row(
+          children: [
+            AppIcon(
+              isCompleted ? AppIcons.circleCheck : AppIcons.clock,
+              color: isCompleted ? palette.success : palette.primary,
             ),
-          ),
-        ],
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    task.title,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      decoration:
+                          isCompleted ? TextDecoration.lineThrough : null,
+                    ),
+                  ),
+                  Text(
+                    '${formatTime(dueDate)} • ${task.category}',
+                    style: TextStyle(fontSize: 12, color: palette.muted),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
