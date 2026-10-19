@@ -18,6 +18,7 @@ Diperbarui: 20 Oktober 2026
 - [x] Pengingat Telegram dari server (token terenkripsi)
 - [x] Klaim pengiriman pengingat atomik — aman untuk beberapa instance server
 - [x] Backup/restore JSON dengan validasi, pratinjau, dan pemilih file
+- [x] Enkripsi backup opsional (PBKDF2 + AES-256-GCM)
 - [x] Database lokal terenkripsi SQLCipher + migrasi otomatis dari DB lama
 - [x] Migrasi database Prisma + baseline
 - [x] Build APK release dengan signing sendiri

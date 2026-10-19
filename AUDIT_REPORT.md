@@ -49,8 +49,8 @@ implementasi saat itu.
    agenda berulang, atau integrasi kalender pihak ketiga.
 2. **Backup** hanya membaca format `format_version: 1`; file dari versi lain
    ditolak dengan pesan yang jelas.
-3. **Database lokal terenkripsi**, tetapi **file backup JSON tidak**; backup
-   yang dibagikan berisi data terbaca.
+3. **Backup JSON** dapat dienkripsi dengan kata sandi (AES-256-GCM), tetapi
+   backup tanpa kata sandi tetap berisi data terbaca.
 4. **Scheduler pengingat** memakai klaim atomik (unique constraint) sehingga
    aman untuk beberapa instance; klaim yang tertinggal dipulihkan setelah
    10 menit.

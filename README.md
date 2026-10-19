@@ -167,6 +167,9 @@ ke GitHub.
 - Database lokal dienkripsi SQLCipher. Kunci 32 byte dibuat acak dan disimpan di
   `flutter_secure_storage`, bukan di source code. Database plaintext dari versi
   lama dimigrasikan otomatis saat pertama dibuka.
+- Backup dapat dilindungi kata sandi: PBKDF2-HMAC-SHA256 (120.000 iterasi) +
+  AES-256-GCM dengan salt/nonce acak. Backup tanpa kata sandi tetap kompatibel
+  dengan format lama.
 - `android:allowBackup="false"` mencegah database terenkripsi dipulihkan tanpa
   kunci aslinya.
 - Setiap endpoint sinkronisasi memfilter data berdasarkan `userId` dari token.
@@ -181,8 +184,8 @@ ke GitHub.
 - Pengiriman pengingat diklaim lewat constraint unik, sehingga beberapa instance
   server tidak mengirim pesan ganda. Klaim yang tertinggal dipulihkan otomatis
   setelah 10 menit.
-- Data lokal dienkripsi SQLCipher per akun. **File backup JSON tidak
-  dienkripsi**, jadi perlakukan file backup seperti data sensitif.
+- Data lokal dienkripsi SQLCipher per akun. Backup JSON **hanya terenkripsi bila
+  pengguna mengisi kata sandi**; backup tanpa kata sandi berisi data terbaca.
 - Menghapus data aplikasi atau kehilangan secure storage membuat database lokal
   tidak dapat dibuka; gunakan backup JSON secara berkala.
 - Rate limiter berbasis memori, perlu Redis untuk deployment multi-instance.

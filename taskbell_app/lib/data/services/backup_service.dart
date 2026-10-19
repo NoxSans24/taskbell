@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite_sqlcipher/sqflite.dart';
+import 'package:taskbell_app/data/services/backup_crypto.dart';
 import 'package:taskbell_app/data/services/backup_validator.dart';
 import 'package:taskbell_app/data/services/local_database.dart';
 import 'package:uuid/uuid.dart';
@@ -31,7 +32,7 @@ class BackupService {
     return '${directory.path}/$fileName';
   }
 
-  Future<String> exportBackup() async {
+  Future<String> exportBackup({String? password}) async {
     final db = await _database();
     final tasks = await db.query(
       'tasks',
@@ -48,13 +49,18 @@ class BackupService {
       'categories': categories,
     };
 
+    final plainJson = jsonEncode(payload);
+    final output = password == null || password.isEmpty
+        ? plainJson
+        : await encryptBackup(plainJson: plainJson, password: password);
+
     final path = await backupPath();
     final file = File(path);
     final temporary = File('$path.tmp');
 
     // Tulis ke file sementara lalu ganti, agar backup lama tidak rusak
     // setengah jalan bila proses berhenti.
-    await temporary.writeAsString(jsonEncode(payload), flush: true);
+    await temporary.writeAsString(output, flush: true);
     if (await file.exists()) {
       await file.delete();
     }
@@ -63,7 +69,33 @@ class BackupService {
     return path;
   }
 
-  Future<BackupData> readBackup(String filePath) async {
+  /// True bila file backup dienkripsi dengan kata sandi.
+  Future<bool> isEncrypted(String filePath) async {
+    final raw = await _readRaw(filePath);
+    return tryParseEncryptedEnvelope(raw) != null;
+  }
+
+  Future<BackupData> readBackup(
+    String filePath, {
+    String? password,
+  }) async {
+    final raw = await _readRaw(filePath);
+
+    if (tryParseEncryptedEnvelope(raw) != null) {
+      if (password == null || password.isEmpty) {
+        throw const BackupValidationException(
+          'Backup ini terenkripsi. Masukkan kata sandi.',
+        );
+      }
+
+      final plainJson = await decryptBackup(raw: raw, password: password);
+      return parseBackupData(plainJson);
+    }
+
+    return parseBackupData(raw);
+  }
+
+  Future<String> _readRaw(String filePath) async {
     final file = File(filePath);
 
     if (!await file.exists()) {
@@ -78,15 +110,15 @@ class BackupService {
       );
     }
 
-    return parseBackupData(await file.readAsString());
+    return file.readAsString();
   }
 
   /// Mengganti seluruh data lokal dengan isi backup yang sudah tervalidasi.
   ///
   /// Antrean mutasi dan cursor sinkronisasi dikosongkan agar data hasil
   /// restore tidak terkirim ulang sebagai mutasi baru.
-  Future<void> importBackup(String filePath) async {
-    final data = await readBackup(filePath);
+  Future<void> importBackup(String filePath, {String? password}) async {
+    final data = await readBackup(filePath, password: password);
     final db = await _database();
 
     await db.transaction((txn) async {
