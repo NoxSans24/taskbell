@@ -1,0 +1,320 @@
+<!DOCTYPE html><html lang="id" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_stack" name="shell-type"><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#FFF9EC;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "comic-canvas": "#FFF9EC", "error-container": "#ffdad6", "tertiary": "#8e4a00", "status-info": "#245CB5", "status-success": "#197447", "primary-container": "#2772dc", "border-ink": "#171717", "status-error": "#B42335", "secondary-fixed": "#ffdea7", "secondary-fixed-dim": "#ffbb18", "on-secondary-fixed": "#271900", "accent-purple": "#8429D8", "primary": "#0059b9", "on-primary": "#ffffff", "surface-container-lowest": "#ffffff", "status-warning": "#8A4B00", "surface-container-highest": "#e5e2e1", "on-error": "#ffffff", "inverse-on-surface": "#f3f0ef", "secondary-container": "#fdb700", "surface-tint": "#005bbe", "on-tertiary-container": "#fffbff", "on-surface-variant": "#424753", "text-muted": "#555555", "surface-container-low": "#f6f3f2", "primary-fixed-dim": "#acc7ff", "accent-red": "#E91E4B", "on-error-container": "#93000a", "comic-surface": "#FFFFFF", "tertiary-container": "#b25f00", "on-primary-container": "#fefcff", "tertiary-fixed": "#ffdcc4", "surface-container": "#f0eded", "on-secondary-container": "#6a4b00", "on-tertiary-fixed-variant": "#6f3900", "on-primary-fixed": "#001a40", "on-secondary-fixed-variant": "#5e4200", "inverse-surface": "#313030", "inverse-primary": "#acc7ff", "outline": "#727784", "surface-variant": "#e5e2e1", "outline-variant": "#c2c6d5", "error": "#ba1a1a", "primary-fixed": "#d7e2ff", "on-surface": "#1c1b1b", "surface-dim": "#dcd9d9", "tertiary-fixed-dim": "#ffb77f", "on-tertiary-fixed": "#2f1500", "on-primary-fixed-variant": "#004491", "on-background": "#1c1b1b", "surface-bright": "#fcf9f8", "surface-container-high": "#eae7e7", "surface": "#fcf9f8", "secondary": "#7c5800", "on-tertiary": "#ffffff", "on-secondary": "#ffffff", "background": "#fcf9f8" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1rem", "space-sm": "0.5rem", "space-xl": "2rem", "margin": "1rem", "space-md": "1rem", "gutter-tablet": "1.5rem", "space-xs": "0.25rem", "space-2xl": "3rem", "space-lg": "1.5rem", "margin-tablet": "1.5rem" }, "fontFamily": { "headline-sm": ["Plus Jakarta Sans"], "caption": ["DM Sans"], "headline-md": ["Plus Jakarta Sans"], "label-sm": ["DM Sans"], "body-lg": ["DM Sans"], "headline-lg": ["Plus Jakarta Sans"], "display": ["Plus Jakarta Sans"], "body-sm": ["DM Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "label-lg": ["DM Sans"], "body-md": ["DM Sans"], "label-md": ["DM Sans"] }, "fontSize": { "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "700" }], "caption": ["11px", { "lineHeight": "14px", "fontWeight": "500" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "500" }], "headline-lg": ["30px", { "lineHeight": "36px", "fontWeight": "800" }], "display": ["38px", { "lineHeight": "44px", "fontWeight": "800" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "800" }], "label-lg": ["14px", { "lineHeight": "18px", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "700" }] } } } }</script>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet"></head><body class="bg-comic-canvas text-on-surface min-h-screen flex flex-col font-body-md"><header class="fixed top-0 w-full z-50 bg-comic-canvas/90 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Kembali" class="w-11 h-11 flex items-center justify-center rounded-xl bg-comic-surface text-border-ink shadow-[2px_2px_0_#171717] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all" onclick="history.back()" type="button"><svg class="w-5 h-5 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"></path></svg></button><img alt="TaskBell Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UFb3ioSWTxOqiTfX7B8OkOyawbvxf_EAn27VVpRGFsQpV3-8WpQEjg5e6pKIgqSPOTL4oOw8dcIrpB8scI8cTbyAYZTSXxEYN5kJ9KQD7cVxp8jPJoVgMAh7YIdJokzmfT3j8X_t43eIKkEBk8_L_Ij6K4Vk7On8sDZT9o2K_FoWHiSD3n6CHiMw3b3qAWN71ciLTm8_nqFtQ5c1ZoTWznjl2BrKL9Lt5IS9Td30cqR_fe6LIxjPJqGyE"><h1 class="font-headline-sm text-headline-sm text-border-ink tracking-tight">Tambah Tugas Baru</h1></div><div class="flex items-center gap-space-sm"><div class="w-8 h-8 rounded-full border border-border-ink overflow-hidden shadow-[2px_2px_0_#171717] flex items-center justify-center bg-comic-surface"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyoa7XgXVsPKQkcQQLl9aRj_ITyRCbYYWYIExKNJIePKauDI0GkAIizi1ITRPwu4JbuVQKdFBsWVoWcjQNyYg1iH4YryYgZ1I-YbLv4uGeWH13PgTRe5UlTjtGKFBLj3DKjRhaRbZWYc1TKHsxXLLmJGiOIEK4S0y9IuQXgiMUM-by2EZkIOFLZAGSfuIcRMM5SVais95ZlYq3W-YqcwtEJRooDzZUYXCHwr_JNQ9v1yK_w8sEwFJAGw"></div></div></div></header><main class="flex-1 w-full px-gutter pt-16 pb-safe bg-comic-canvas"><div class="flex flex-col w-full pb-8">
+<!-- Interactive Form Container -->
+<form class="flex flex-col w-full gap-space-lg" id="taskForm" onsubmit="event.preventDefault();"><!-- 1. Input Judul Tugas -->
+<div class="flex flex-col gap-space-xs">
+  <div class="flex items-center justify-between">
+    <label class="font-label-lg text-label-lg text-border-ink" for="taskTitle">
+      Judul Tugas <span class="text-accent-red">*</span>
+    </label>
+    <span class="font-caption text-caption text-text-muted" id="titleCharCounter">22/80 karakter</span>
+  </div>
+  <input class="w-full h-12 px-space-md rounded-lg bg-comic-surface text-border-ink font-body-md text-body-md placeholder:text-text-muted/60 focus:outline-none transition-transform" id="taskTitle" name="title" placeholder="Contoh: Submit Proposal Skripsi" required="" maxlength="80" oninput="document.getElementById('titleCharCounter').textContent = this.value.length + '/80 karakter';" style="box-shadow: 3px 3px 0px #171717; border: 2px solid #171717;" type="text" value="Submit Proposal Skripsi">
+  <span class="font-caption text-caption text-text-muted">Wajib diisi dengan ringkas dan jelas.</span>
+</div>
+
+<!-- 2. Input Deskripsi/Catatan (Opsional) -->
+<div class="flex flex-col gap-space-xs">
+  <div class="flex items-center justify-between">
+    <label class="font-label-lg text-label-lg text-border-ink" for="taskDesc">
+      Catatan Tambahan
+    </label>
+    <span class="font-caption text-caption text-text-muted">Opsional</span>
+  </div>
+  <textarea class="w-full p-space-md rounded-lg bg-comic-surface text-border-ink font-body-md text-body-md placeholder:text-text-muted/60 focus:outline-none resize-none transition-transform" id="taskDesc" name="description" placeholder="Catatan atau detail tugas..." rows="3" style="box-shadow: 3px 3px 0px #171717; border: 2px solid #171717;">Pastikan lampiran daftar pustaka format IEEE dan tanda tangan pembimbing sudah tertera di lembar persetujuan.</textarea>
+</div>
+
+<!-- 3. Pemilih Kategori (Kuliah, Kerja, Pribadi, Lainnya) -->
+<div class="flex flex-col gap-space-xs">
+  <label class="font-label-lg text-label-lg text-border-ink">Kategori</label>
+  <div class="flex flex-wrap items-center gap-space-sm">
+    <!-- Kuliah (Aktif) -->
+    <button class="category-chip flex items-center gap-1.5 px-3 py-2 rounded-full font-label-md text-label-md text-border-ink bg-secondary-container transition-all active:translate-x-[2px] active:translate-y-[2px]" onclick="selectCategory(this)" style="box-shadow: 3px 3px 0px #171717; border: 2px solid #171717;" type="button">
+      <svg class="w-4 h-4 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+        <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+      </svg>
+      <span class="">Kuliah</span>
+    </button>
+    <!-- Kerja -->
+    <button class="category-chip flex items-center gap-1.5 px-3 py-2 rounded-full font-label-md text-label-md text-border-ink bg-comic-surface transition-all active:translate-x-[2px] active:translate-y-[2px]" onclick="selectCategory(this)" style="box-shadow: 3px 3px 0px #171717; border: 2px solid #171717;" type="button">
+      <svg class="w-4 h-4 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+        <rect height="14" rx="2" ry="2" width="20" x="2" y="7"></rect>
+        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+      </svg>
+      <span class="">Kerja</span>
+    </button>
+    <!-- Pribadi -->
+    <button class="category-chip flex items-center gap-1.5 px-3 py-2 rounded-full font-label-md text-label-md text-border-ink bg-comic-surface transition-all active:translate-x-[2px] active:translate-y-[2px]" onclick="selectCategory(this)" style="box-shadow: 3px 3px 0px #171717; border: 2px solid #171717;" type="button">
+      <svg class="w-4 h-4 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+        <circle cx="12" cy="7" r="4"></circle>
+      </svg>
+      <span class="">Pribadi</span>
+    </button>
+    <!-- Lainnya -->
+    <button class="category-chip flex items-center gap-1.5 px-3 py-2 rounded-full font-label-md text-label-md text-border-ink bg-comic-surface transition-all active:translate-x-[2px] active:translate-y-[2px]" onclick="selectCategory(this)" style="box-shadow: 3px 3px 0px #171717; border: 2px solid #171717;" type="button">
+      <svg class="w-4 h-4 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="1"></circle>
+        <circle cx="19" cy="12" r="1"></circle>
+        <circle cx="5" cy="12" r="1"></circle>
+      </svg>
+      <span class="">Lainnya</span>
+    </button>
+  </div>
+</div>
+
+<!-- 4. Tingkat Prioritas (Pill Komik tanpa emoji) -->
+<div class="flex flex-col gap-space-xs">
+  <label class="font-label-lg text-label-lg text-border-ink">Tingkat Prioritas</label>
+  <div class="grid grid-cols-3 gap-space-sm p-1.5 rounded-xl bg-comic-surface" style="border: 2px solid #171717; box-shadow: 3px 3px 0px #171717;">
+    <!-- Rendah -->
+    <button class="priority-tab py-2.5 rounded-lg font-label-md text-label-md text-center transition-all text-text-muted hover:text-border-ink" onclick="selectPriority(this, 'low')" type="button">
+      Rendah
+    </button>
+    <!-- Sedang -->
+    <button class="priority-tab py-2.5 rounded-lg font-label-md text-label-md text-center transition-all text-text-muted hover:text-border-ink" onclick="selectPriority(this, 'medium')" type="button">
+      Sedang
+    </button>
+    <!-- Tinggi (Aktif, dengan SVG api inline bukan emoji) -->
+    <button class="priority-tab flex items-center justify-center gap-1.5 py-2.5 rounded-lg font-label-md text-label-md text-center transition-all bg-accent-red text-comic-surface font-bold shadow-[2px_2px_0_#171717]" onclick="selectPriority(this, 'high')" style="border: 2px solid #171717;" type="button">
+      <svg class="w-4 h-4 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
+      </svg>
+      <span class="">Tinggi</span>
+    </button>
+  </div>
+</div>
+
+<!-- 5. Tenggat Tanggal & Waktu (Opsional) -->
+<div class="flex flex-col gap-space-xs">
+  <div class="flex items-center justify-between">
+    <label class="font-label-lg text-label-lg text-border-ink">Tenggat Waktu</label>
+    <span class="font-caption text-caption text-text-muted">Opsional</span>
+  </div>
+  <div class="grid grid-cols-2 gap-space-sm"><!-- Tanggal Dinamis -->
+<button class="flex items-center gap-space-sm h-12 px-space-md rounded-lg bg-comic-surface text-border-ink text-left transition-all active:translate-x-[2px] active:translate-y-[2px]" style="box-shadow: rgb(23, 23, 23) 3px 3px 0px; border: 2px solid rgb(23, 23, 23);" type="button">
+  <svg class="w-5 h-5 shrink-0 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+    <rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect>
+    <line x1="16" x2="16" y1="2" y2="6"></line>
+    <line x1="8" x2="8" y1="2" y2="6"></line>
+    <line x1="3" x2="21" y1="10" y2="10"></line>
+  </svg>
+  <div class="flex flex-col min-w-0">
+    <span class="font-caption text-caption text-text-muted leading-none">Tanggal</span>
+    <span class="font-label-md text-label-md text-border-ink truncate mt-0.5">Pilih Tanggal Tenggat (Dinamis)</span>
+  </div>
+</button>
+<!-- Waktu Dinamis -->
+<button class="flex items-center gap-space-sm h-12 px-space-md rounded-lg bg-comic-surface text-border-ink text-left transition-all active:translate-x-[2px] active:translate-y-[2px]" style="box-shadow: rgb(23, 23, 23) 3px 3px 0px; border: 2px solid rgb(23, 23, 23);" type="button">
+  <svg class="w-5 h-5 shrink-0 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="10"></circle>
+    <polyline points="12 6 12 12 16 14"></polyline>
+  </svg>
+  <div class="flex flex-col min-w-0">
+    <span class="font-caption text-caption text-text-muted leading-none">Waktu</span>
+    <span class="font-label-md text-label-md text-border-ink truncate mt-0.5">Pukul 14:00 WIB</span>
+  </div>
+</button></div>
+</div>
+
+<!-- 6. Pengingat Telegram -->
+<div class="flex flex-col gap-space-sm p-4 rounded-xl bg-comic-surface" style="border: 2px solid rgb(23, 23, 23); box-shadow: rgb(23, 23, 23) 3px 3px 0px;">
+  <!-- Toggle Header -->
+  <div class="flex items-center justify-between">
+    <div class="flex items-center gap-space-sm">
+      <div class="w-9 h-9 rounded-lg bg-status-info/10 text-status-info flex items-center justify-center shrink-0" style="border: 1.5px solid #171717;">
+        <svg class="w-5 h-5 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M22 2L11 13"></path>
+          <path d="M22 2l-7 20-4-9-9-4 20-7z"></path>
+        </svg>
+      </div>
+      <div class="flex flex-col">
+        <span class="font-label-lg text-label-lg text-border-ink leading-tight">Pengingat Telegram</span>
+        <span class="font-caption text-caption text-text-muted">Kirim sinyal via @TaskBellBot</span>
+      </div>
+    </div>
+    <!-- Toggle Switch -->
+    <label class="relative inline-flex items-center cursor-pointer">
+      <input checked="" class="sr-only peer" id="telegramToggle" type="checkbox">
+      <div class="w-12 h-7 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-border-ink after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-comic-surface after:rounded-full after:h-6 after:w-6 after:transition-all peer-checked:bg-status-success" style="border: 2px solid #171717; box-shadow: 2px 2px 0px #171717;"></div>
+    </label>
+  </div>
+
+  <!-- Dropdown Waktu Pengingat -->
+  <div class="flex flex-col gap-space-xs pt-space-xs" id="reminderOptions">
+    <label class="font-caption text-caption text-text-muted" for="reminderSelect">Waktu Peringatan</label>
+    <div class="relative">
+      <select class="w-full h-11 px-space-md pr-10 rounded-lg bg-comic-canvas text-border-ink font-body-md text-body-md appearance-none focus:outline-none" id="reminderSelect" style="border: 2px solid #171717; box-shadow: 2px 2px 0px #171717;">
+        <option value="15">15 Menit Sebelum</option>
+        <option selected="" value="30">30 Menit Sebelum</option>
+        <option value="60">1 Jam Sebelum</option>
+      </select>
+      <div class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-border-ink">
+        <svg class="w-5 h-5 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Status Koneksi Bot -->
+  <div class="flex items-center gap-1.5 pt-1 text-status-success font-caption text-caption"><svg class="w-4 h-4 shrink-0 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg><span class="">Terhubung ke <strong>@TaskBellBot</strong> (Simulasi MVP Aktif)</span></div>
+</div>
+
+<!-- Toast / Feedback Helper Ringkas -->
+<div class="flex items-center justify-between px-3 py-2 rounded-lg bg-comic-canvas text-border-ink border-2 border-dashed border-border-ink">
+  <div class="flex items-center gap-2">
+    <svg class="w-4 h-4 text-status-info stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10"></circle>
+      <line x1="12" x2="12" y1="16" y2="12"></line>
+      <line x1="12" x2="12.01" y1="8" y2="8"></line>
+    </svg>
+    <span class="font-caption text-caption text-text-muted">Siap disimpan ke server &amp; lokal</span>
+  </div>
+  <span class="font-label-sm text-label-sm text-status-success font-bold">Auto-Draft Aktif</span>
+</div>
+
+<!-- 7. Tombol Aksi Utama -->
+<div class="flex items-center gap-space-md pt-space-xs mt-1">
+  <!-- Batal (Secondary) -->
+  <button class="w-1/3 h-12 flex items-center justify-center rounded-lg bg-comic-surface text-border-ink font-label-lg text-label-lg transition-all active:translate-x-[2px] active:translate-y-[2px]" onclick="history.back()" style="border: 2px solid #171717; box-shadow: 3px 3px 0px #171717;" type="button">
+    Batal
+  </button>
+  <!-- Simpan Tugas (Primary Biru dengan ikon SVG disket/centang) -->
+  <button class="flex-1 h-12 flex items-center justify-center gap-2 rounded-lg bg-primary-container text-comic-surface font-label-lg text-label-lg transition-all active:translate-x-[2px] active:translate-y-[2px]" style="border: 2px solid #171717; box-shadow: 3px 3px 0px #171717; background-color: #347BE5;" type="submit">
+    <svg class="w-5 h-5 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+      <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
+      <polyline points="17 21 17 13 7 13 7 21"></polyline>
+      <polyline points="7 3 7 8 15 8"></polyline>
+    </svg>
+    <span class="">Simpan Tugas</span>
+  </button>
+</div></form>
+</div>
+<script>
+  function toggleSubtask(element) {
+    const checkIcon = element.querySelector('svg');
+    const box = element.querySelector('div');
+    const text = element.querySelector('span');
+
+    const isDone = !checkIcon.classList.contains('hidden');
+
+    if (isDone) {
+      checkIcon.classList.add('hidden');
+      box.classList.remove('bg-primary');
+      box.classList.add('bg-comic-surface');
+      text.classList.remove('line-through', 'text-text-muted');
+      text.classList.add('text-border-ink', 'font-medium');
+    } else {
+      checkIcon.classList.remove('hidden');
+      box.classList.remove('bg-comic-surface');
+      box.classList.add('bg-primary');
+      text.classList.add('line-through', 'text-text-muted');
+      text.classList.remove('text-border-ink', 'font-medium');
+    }
+    updateCounter();
+  }
+
+  function updateCounter() {
+    const list = document.getElementById('subtaskList');
+    const total = list.children.length;
+    const completed = list.querySelectorAll('.line-through').length;
+    const counter = document.getElementById('subtaskCounter');
+    counter.innerText = `${completed}/${total} Selesai`;
+  }
+
+  function addSubtaskPrompt() {
+    const title = prompt('Masukkan nama subtask baru:');
+    if (!title || title.trim() === '') return;
+
+    const list = document.getElementById('subtaskList');
+    const newRow = document.createElement('div');
+    newRow.className = 'flex items-center justify-between p-3 rounded-lg bg-comic-surface transition-all';
+    newRow.style.border = '2px solid #171717';
+    newRow.style.boxShadow = '2px 2px 0px #171717';
+
+    newRow.innerHTML = `
+      <div class="flex items-center gap-space-sm flex-1 min-w-0 cursor-pointer" onclick="toggleSubtask(this)">
+        <div class="w-6 h-6 rounded-md bg-comic-surface flex items-center justify-center shrink-0" style="border: 2px solid #171717;">
+          <svg class="w-4 h-4 text-comic-surface stroke-current fill-none hidden" viewBox="0 0 24 24" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <span class="font-body-md text-body-md text-border-ink font-medium truncate select-none">
+          ${title.trim()}
+        </span>
+      </div>
+      <div class="flex items-center gap-1 ml-2">
+        <button type="button" aria-label="Geser posisi" class="p-1 text-text-muted cursor-grab hover:text-border-ink">
+          <svg class="w-4 h-4 stroke-current fill-none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="9" cy="6" r="1"/>
+            <circle cx="15" cy="6" r="1"/>
+            <circle cx="9" cy="12" r="1"/>
+            <circle cx="15" cy="12" r="1"/>
+            <circle cx="9" cy="18" r="1"/>
+            <circle cx="15" cy="18" r="1"/>
+          </svg>
+        </button>
+        <button type="button" aria-label="Hapus subtask" onclick="this.parentElement.parentElement.remove(); updateCounter();" class="p-1 text-text-muted hover:text-accent-red active:scale-90 transition-transform">
+          <svg class="w-4 h-4 stroke-current fill-none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    `;
+
+    list.appendChild(newRow);
+    updateCounter();
+  }
+
+  function selectPriority(btn, level) {
+    const tabs = document.querySelectorAll('.priority-tab');
+    tabs.forEach(t => {
+      t.className = 'priority-tab py-2.5 rounded-lg font-label-md text-label-md text-center transition-all text-text-muted hover:text-border-ink';
+      t.style.border = 'none';
+      t.style.boxShadow = 'none';
+    });
+
+    btn.style.border = '2px solid #171717';
+    btn.style.boxShadow = '2px 2px 0 #171717';
+
+    if (level === 'low') {
+      btn.className = 'priority-tab py-2.5 rounded-lg font-label-md text-label-md text-center transition-all bg-secondary-fixed text-border-ink font-bold';
+    } else if (level === 'medium') {
+      btn.className = 'priority-tab py-2.5 rounded-lg font-label-md text-label-md text-center transition-all bg-secondary-container text-border-ink font-bold';
+    } else {
+      btn.className = 'priority-tab py-2.5 rounded-lg font-label-md text-label-md text-center transition-all bg-accent-red text-comic-surface font-bold';
+    }
+  }
+
+  function selectRecurrence(btn) {
+    const buttons = document.querySelectorAll('.recurrence-btn');
+    buttons.forEach(b => {
+      b.classList.remove('bg-primary-fixed', 'text-border-ink');
+      b.classList.add('bg-comic-surface', 'text-text-muted');
+    });
+    btn.classList.remove('bg-comic-surface', 'text-text-muted');
+    btn.classList.add('bg-primary-fixed', 'text-border-ink');
+  }
+
+  // Handle Telegram Toggle Visibility
+  document.getElementById('telegramToggle')?.addEventListener('change', function(e) {
+    const options = document.getElementById('reminderOptions');
+    if (e.target.checked) {
+      options.style.opacity = '1';
+      options.style.pointerEvents = 'auto';
+    } else {
+      options.style.opacity = '0.4';
+      options.style.pointerEvents = 'none';
+    }
+  });
+</script></main>
+
+
+
+
+
+</body></html>

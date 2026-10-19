@@ -1,0 +1,51 @@
+name: taskbell_app
+description: A pop-art style todo app for Android with Telegram integration.
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  path_provider: ^2.1.2
+  # State Management
+  flutter_riverpod: ^2.4.9
+  # Database
+  path: ^1.8.3
+  # Utilities
+  intl: ^0.20.3
+  timezone: ^0.10.0
+  flutter_local_notifications: ^18.0.0
+  http: ^1.6.0
+  shared_preferences: ^2.5.2
+  uuid: ^4.6.0
+  flutter_secure_storage: ^11.2.0
+  flutter_svg: ^2.3.0
+  file_selector: ^1.1.0
+  sqflite_sqlcipher: ^3.4.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  flutter_launcher_icons: ^0.14.4
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icons/
+    - assets/icons/svg/
+    - assets/images/
+  fonts:
+    - family: Plus Jakarta Sans
+      fonts:
+        - asset: assets/fonts/PlusJakartaSans.ttf
+    - family: DM Sans
+      fonts:
+        - asset: assets/fonts/DMSans.ttf
+
+flutter_launcher_icons:
+  android: true
+  image_path: "assets/icons/app_icon.png"
+  min_sdk_android: 21

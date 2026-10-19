@@ -1,0 +1,153 @@
+<!DOCTYPE html><html lang="id" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#FFF9EC;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "comic-canvas": "#FFF9EC", "error-container": "#ffdad6", "tertiary": "#8e4a00", "status-info": "#245CB5", "status-success": "#197447", "primary-container": "#2772dc", "border-ink": "#171717", "status-error": "#B42335", "secondary-fixed": "#ffdea7", "secondary-fixed-dim": "#ffbb18", "on-secondary-fixed": "#271900", "accent-purple": "#8429D8", "primary": "#0059b9", "on-primary": "#ffffff", "surface-container-lowest": "#ffffff", "status-warning": "#8A4B00", "surface-container-highest": "#e5e2e1", "on-error": "#ffffff", "inverse-on-surface": "#f3f0ef", "secondary-container": "#fdb700", "surface-tint": "#005bbe", "on-tertiary-container": "#fffbff", "on-surface-variant": "#424753", "text-muted": "#555555", "surface-container-low": "#f6f3f2", "primary-fixed-dim": "#acc7ff", "accent-red": "#E91E4B", "on-error-container": "#93000a", "comic-surface": "#FFFFFF", "tertiary-container": "#b25f00", "on-primary-container": "#fefcff", "tertiary-fixed": "#ffdcc4", "surface-container": "#f0eded", "on-secondary-container": "#6a4b00", "on-tertiary-fixed-variant": "#6f3900", "on-primary-fixed": "#001a40", "on-secondary-fixed-variant": "#5e4200", "inverse-surface": "#313030", "inverse-primary": "#acc7ff", "outline": "#727784", "surface-variant": "#e5e2e1", "outline-variant": "#c2c6d5", "error": "#ba1a1a", "primary-fixed": "#d7e2ff", "on-surface": "#1c1b1b", "surface-dim": "#dcd9d9", "tertiary-fixed-dim": "#ffb77f", "on-tertiary-fixed": "#2f1500", "on-primary-fixed-variant": "#004491", "on-background": "#1c1b1b", "surface-bright": "#fcf9f8", "surface-container-high": "#eae7e7", "surface": "#fcf9f8", "secondary": "#7c5800", "on-tertiary": "#ffffff", "on-secondary": "#ffffff", "background": "#fcf9f8" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1rem", "space-sm": "0.5rem", "space-xl": "2rem", "margin": "1rem", "space-md": "1rem", "gutter-tablet": "1.5rem", "space-xs": "0.25rem", "space-2xl": "3rem", "space-lg": "1.5rem", "margin-tablet": "1.5rem" }, "fontFamily": { "headline-sm": ["Plus Jakarta Sans"], "caption": ["DM Sans"], "headline-md": ["Plus Jakarta Sans"], "label-sm": ["DM Sans"], "body-lg": ["DM Sans"], "headline-lg": ["Plus Jakarta Sans"], "display": ["Plus Jakarta Sans"], "body-sm": ["DM Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "label-lg": ["DM Sans"], "body-md": ["DM Sans"], "label-md": ["DM Sans"] }, "fontSize": { "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "700" }], "caption": ["11px", { "lineHeight": "14px", "fontWeight": "500" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "500" }], "headline-lg": ["30px", { "lineHeight": "36px", "fontWeight": "800" }], "display": ["38px", { "lineHeight": "44px", "fontWeight": "800" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "800" }], "label-lg": ["14px", { "lineHeight": "18px", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "700" }] } } } }</script>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet"></head><body class="bg-comic-canvas text-on-surface min-h-screen flex flex-col font-body-md"><header class="fixed top-0 w-full z-50 bg-comic-canvas/90 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="TaskBell Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UFb3ioSWTxOqiTfX7B8OkOyawbvxf_EAn27VVpRGFsQpV3-8WpQEjg5e6pKIgqSPOTL4oOw8dcIrpB8scI8cTbyAYZTSXxEYN5kJ9KQD7cVxp8jPJoVgMAh7YIdJokzmfT3j8X_t43eIKkEBk8_L_Ij6K4Vk7On8sDZT9o2K_FoWHiSD3n6CHiMw3b3qAWN71ciLTm8_nqFtQ5c1ZoTWznjl2BrKL9Lt5IS9Td30cqR_fe6LIxjPJqGyE"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-border-ink leading-none tracking-tight">TaskBell</span><span class="font-caption text-caption text-text-muted leading-tight">Beranda</span></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-1 px-2 py-1 bg-surface-container-lowest rounded-full shadow-[2px_2px_0_#171717] border border-border-ink"><svg class="w-3.5 h-3.5 text-status-success stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path><path d="m9 13 2 2 4-4"></path></svg><span class="font-caption text-caption text-border-ink font-bold">Sinkron</span></div><div class="w-8 h-8 rounded-full border border-border-ink overflow-hidden shadow-[2px_2px_0_#171717] flex items-center justify-center bg-comic-surface"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyoa7XgXVsPKQkcQQLl9aRj_ITyRCbYYWYIExKNJIePKauDI0GkAIizi1ITRPwu4JbuVQKdFBsWVoWcjQNyYg1iH4YryYgZ1I-YbLv4uGeWH13PgTRe5UlTjtGKFBLj3DKjRhaRbZWYc1TKHsxXLLmJGiOIEK4S0y9IuQXgiMUM-by2EZkIOFLZAGSfuIcRMM5SVais95ZlYq3W-YqcwtEJRooDzZUYXCHwr_JNQ9v1yK_w8sEwFJAGw"></div></div></div></header><main class="flex-1 w-full px-gutter pt-16 pb-28 bg-comic-canvas"><div class="flex flex-col w-full pb-8 space-y-5">
+<!-- Sapaan & Status Badge Pop-Art -->
+<div class="relative bg-surface-container-lowest p-4 rounded-xl shadow-[3px_3px_0_#171717] overflow-hidden">
+<!-- Halftone retro pattern overlay -->
+<div class="absolute -right-6 -bottom-6 w-28 h-28 opacity-10 pointer-events-none" style="background-image: radial-gradient(#171717 2px, transparent 2px); background-size: 8px 8px;"></div>
+<div class="flex items-start justify-between relative z-10">
+<div class="flex flex-col">
+<div class="inline-flex items-center gap-1.5 self-start px-2.5 py-0.5 rounded-full bg-secondary-fixed text-border-ink shadow-[2px_2px_0_#171717] mb-2">
+<svg class="w-3.5 h-3.5 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24">
+<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+</svg>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Level 4 Produktif</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-border-ink tracking-tight flex items-center gap-1">Halo, Budi!<svg class="w-6 h-6 text-secondary-container fill-secondary-container stroke-border-ink" stroke-width="2" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></h1>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5"><span class="flex items-center gap-2 flex-wrap"><span class="">Hari Ini (WIB)</span><span class="px-1.5 py-0.2 bg-comic-canvas text-text-muted border border-border-ink rounded font-caption text-caption shadow-[1px_1px_0_#171717]">Mock Data</span></span></p>
+</div>
+<!-- Speech Bubble Tag -->
+<div class="relative bg-secondary-container text-border-ink px-3 py-1.5 rounded-lg shadow-[2px_2px_0_#171717] flex items-center"><span class="font-label-md text-label-md font-bold whitespace-nowrap flex items-center gap-1">Gas Pol!<svg class="w-3.5 h-3.5 fill-current stroke-border-ink" stroke-width="1.5" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></span><div class="absolute -bottom-1.5 right-3 w-3 h-3 bg-secondary-container rotate-45"></div></div>
+</div>
+<!-- Quick CTA Tambah Tugas -->
+<div class="mt-4 pt-3.5 flex items-center gap-2">
+<button class="w-full h-12 bg-secondary-container text-border-ink rounded-lg font-label-lg text-label-lg shadow-[3px_3px_0_#171717] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all flex items-center justify-center gap-2" type="button">
+<svg class="w-5 h-5 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24">
+<line x1="12" x2="12" y1="5" y2="19"></line>
+<line x1="5" x2="19" y1="12" y2="12"></line>
+</svg>
+<span class="">+ Tambah Tugas Baru</span>
+</button>
+</div>
+</div>
+<!-- 4 Kartu Ringkasan Statistik (Grid 2x2 Pop Comic) -->
+<div class="flex items-center justify-between px-1 -mb-1"><span class="font-label-sm text-caption text-text-muted uppercase tracking-wider font-bold">Statistik Tugas</span><span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container-highest text-text-muted border border-border-ink font-caption text-caption shadow-[1px_1px_0_#171717]"><span class="w-1.5 h-1.5 rounded-full bg-status-warning"></span>Mock Data / Demonstrasi</span></div><div class="grid grid-cols-2 gap-3">
+<!-- Total Tugas -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl shadow-[3px_3px_0_#171717] flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between mb-2">
+<div class="w-9 h-9 rounded-lg bg-primary-fixed flex items-center justify-center text-primary shadow-[2px_2px_0_#171717]">
+<svg class="w-5 h-5 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24">
+<path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+<rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect>
+</svg>
+</div>
+<span class="font-label-sm text-caption text-text-muted uppercase">Semua</span>
+</div>
+<div>
+<p class="font-headline-md text-headline-md text-border-ink leading-tight">12</p>
+<p class="font-body-sm text-body-sm text-text-muted font-medium">Total Tugas</p>
+</div>
+</div>
+<!-- Belum Selesai -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl shadow-[3px_3px_0_#171717] flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between mb-2">
+<div class="w-9 h-9 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary-fixed-dim shadow-[2px_2px_0_#171717]">
+<svg class="w-5 h-5 stroke-current fill-none text-border-ink" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+</div>
+<span class="font-label-sm text-caption text-status-warning uppercase font-bold">Aktif</span>
+</div>
+<div>
+<p class="font-headline-md text-headline-md text-border-ink leading-tight">5</p>
+<p class="font-body-sm text-body-sm text-text-muted font-medium">Tertunda</p>
+</div>
+</div>
+<!-- Selesai -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl shadow-[3px_3px_0_#171717] flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between mb-2">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest flex items-center justify-center text-status-success shadow-[2px_2px_0_#171717]">
+<svg class="w-5 h-5 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24">
+<path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+<polyline points="22 4 12 14.01 9 11.01"></polyline>
+</svg>
+</div>
+<span class="font-label-sm text-caption text-status-success uppercase font-bold">Bagus!</span>
+</div>
+<div>
+<p class="font-headline-md text-headline-md text-border-ink leading-tight">7</p>
+<p class="font-body-sm text-body-sm text-text-muted font-medium">Terselesaikan</p>
+</div>
+</div>
+<!-- Terlambat -->
+<div class="bg-surface-container-lowest p-3.5 rounded-xl shadow-[3px_3px_0_#171717] flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-center justify-between mb-2">
+<div class="w-9 h-9 rounded-lg bg-error-container flex items-center justify-center text-status-error shadow-[2px_2px_0_#171717]">
+<svg class="w-5 h-5 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24">
+<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path>
+<line x1="12" x2="12" y1="9" y2="13"></line>
+<line x1="12" x2="12.01" y1="17" y2="17"></line>
+</svg>
+</div>
+<span class="font-label-sm text-caption text-status-error uppercase font-bold">Atensi</span>
+</div>
+<div>
+<p class="font-headline-md text-headline-md text-status-error leading-tight">1</p>
+<p class="font-body-sm text-body-sm text-text-muted font-medium">Lewat Tenggat</p>
+</div>
+</div>
+</div>
+<!-- Banner Integrasi Telegram Bot (Comic Panel Style) -->
+<div class="relative bg-surface-container-lowest p-4 rounded-xl shadow-[3px_3px_0_#171717] overflow-hidden">
+<div class="flex items-start gap-3">
+<!-- Telegram SVG Logo Pop Frame -->
+<div class="w-12 h-12 rounded-xl bg-[#2AABEE] text-on-primary flex items-center justify-center shrink-0 shadow-[2px_2px_0_#171717]">
+<svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+<path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 0 0-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.77-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06-.01.24-.03.4z"></path>
+</svg>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5"><span class="font-headline-sm text-headline-sm text-border-ink">TaskBell Bot</span><span class="inline-flex items-center gap-1 px-1.5 py-0.2 rounded bg-surface-container-highest text-status-success font-label-sm text-caption"><span class="w-1.5 h-1.5 rounded-full bg-status-success"></span>Aktif</span></div>
+</div>
+<p class="font-caption text-caption text-text-muted mt-0.5 truncate">Chat ID: #9823144 • Terverifikasi</p>
+
+</div>
+</div>
+<!-- Tombol Aksi Telegram -->
+<div class="mt-3 pt-3 flex items-center justify-end gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-border-ink font-label-md text-label-md shadow-[2px_2px_0_#171717] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all flex items-center gap-1.5" type="button">
+<svg class="w-4 h-4 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24">
+<line x1="22" x2="11" y1="2" y2="13"></line>
+<polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+</svg>
+<span class="">Tes Notifikasi</span>
+</button>
+</div>
+</div>
+<!-- Bagian: Prioritas Hari Ini -->
+<div class="flex flex-col space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-accent-red shadow-[1px_1px_0_#171717]"></span>
+<h2 class="font-headline-sm text-headline-sm text-border-ink uppercase tracking-tight">Prioritas Hari Ini</h2>
+</div>
+<button class="font-label-md text-label-md text-primary font-bold hover:underline" type="button">
+        Lihat Semua (5)
+      </button>
+</div>
+<!-- Kartu Tugas 1 -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-[3px_3px_0_#171717] flex flex-col space-y-3 relative group"><div class="flex items-start gap-3"><button aria-label="Tandai selesai" class="w-6 h-6 rounded-md bg-comic-canvas text-transparent hover:text-primary flex items-center justify-center shrink-0 mt-0.5 shadow-[2px_2px_0_#171717] border border-border-ink active:scale-95 transition-all" type="button"><svg class="w-4 h-4 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></button><div class="flex-1 min-w-0"><div class="flex items-center gap-2 flex-wrap mb-1"><span class="px-2 py-0.5 rounded-full bg-error-container text-status-error font-label-sm text-caption uppercase shadow-[1px_1px_0_#171717] border border-border-ink flex items-center gap-1"><svg class="w-3 h-3 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>Prioritas Tinggi</span><span class="px-2 py-0.5 rounded-full bg-primary-fixed text-primary font-label-sm text-caption border border-border-ink">Kuliah</span></div><h3 class="font-body-lg text-body-lg text-border-ink font-bold leading-snug">Kirim Draft Laporan Proyek</h3><p class="font-body-sm text-body-sm text-text-muted mt-0.5 line-clamp-1">Format PDF, lampirkan ringkasan eksekutif dan slide.</p></div></div><div class="bg-comic-canvas p-2.5 rounded-lg flex items-center justify-between text-caption font-label-sm border border-border-ink"><div class="flex items-center gap-1 text-status-error font-bold"><svg class="w-3.5 h-3.5 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span class="">Tenggat: Hari Ini 17:00 WIB</span></div><div class="flex items-center gap-1 text-status-success font-bold"><svg class="w-4 h-4 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg><span class="text-caption font-bold">Telegram Aktif</span></div></div></div>
+<!-- Kartu Tugas 2 -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-[3px_3px_0_#171717] flex flex-col space-y-3 relative group"><div class="flex items-start gap-3"><button aria-label="Tandai selesai" class="w-6 h-6 rounded-md bg-comic-canvas text-transparent hover:text-primary flex items-center justify-center shrink-0 mt-0.5 shadow-[2px_2px_0_#171717] border border-border-ink active:scale-95 transition-all" type="button"><svg class="w-4 h-4 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></button><div class="flex-1 min-w-0"><div class="flex items-center gap-2 flex-wrap mb-1"><span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-status-warning font-label-sm text-caption uppercase shadow-[1px_1px_0_#171717] border border-border-ink flex items-center gap-1"><svg class="w-3 h-3 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>Prioritas Sedang</span><span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-border-ink font-label-sm text-caption border border-border-ink">Pribadi</span></div><h3 class="font-body-lg text-body-lg text-border-ink font-bold leading-snug">Beli Buku Catatan</h3><p class="font-body-sm text-body-sm text-text-muted mt-0.5 line-clamp-1">Buku catatan grid A5 &amp; pulpen gel untuk catatan kuliah harian.</p></div></div><div class="bg-comic-canvas p-2.5 rounded-lg flex items-center justify-between text-caption font-label-sm border border-border-ink"><div class="flex items-center gap-1 text-border-ink font-bold"><svg class="w-3.5 h-3.5 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span class="">Tenggat: Hari Ini 20:00 WIB</span></div><div class="flex items-center gap-1 text-text-muted"><svg class="w-4 h-4 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span class="text-caption font-medium">Fleksibel</span></div></div></div>
+</div>
+<!-- Bagian: Ringkasan Mingguan & Pintasan -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-[3px_3px_0_#171717] flex flex-col space-y-3 relative"><div class="flex items-center justify-between"><div class="flex items-center gap-2"><div class="w-7 h-7 rounded bg-secondary-fixed flex items-center justify-center text-border-ink shadow-[1px_1px_0_#171717]"><svg class="w-4 h-4 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"><rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg></div><span class="font-headline-sm text-headline-sm text-border-ink">Pintasan Agenda</span></div><span class="font-caption text-caption text-text-muted">Mode MVP</span></div><p class="font-body-sm text-body-sm text-text-muted leading-snug">Buka kalender untuk meninjau jadwal tenggat hari ini dan atur prioritas tugas secara tepat waktu.</p><div class="grid grid-cols-2 gap-2 pt-1"><button class="h-10 px-3 bg-comic-canvas rounded-lg text-border-ink font-label-md text-label-md shadow-[2px_2px_0_#171717] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all flex items-center justify-center gap-2" type="button"><svg class="w-4 h-4 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"><rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg><span class="">Buka Kalender</span></button><button class="h-10 px-3 bg-comic-canvas rounded-lg text-border-ink font-label-md text-label-md shadow-[2px_2px_0_#171717] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all flex items-center justify-center gap-2" type="button"><svg class="w-4 h-4 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"><path d="m9 11 3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg><span class="">Semua Tugas</span></button></div></div>
+<!-- Motivasi Penutup Komik Card -->
+<div class="relative bg-secondary-fixed p-3.5 rounded-xl shadow-[3px_3px_0_#171717] flex items-center gap-3"><div class="w-10 h-10 rounded-full bg-surface-container-lowest flex items-center justify-center shrink-0 shadow-[2px_2px_0_#171717]"><svg class="w-5 h-5 text-border-ink stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="16" y2="12"></line><line x1="12" x2="12.01" y1="8" y2="8"></line></svg></div><div class="flex-1 min-w-0"><p class="font-label-md text-label-md text-border-ink font-bold leading-tight">Pengingat Otomatis Aktif</p><p class="font-body-sm text-body-sm text-text-muted mt-0.5">TaskBell akan mengirimkan notifikasi tugas via Telegram sebelum batas tenggat tiba.</p></div></div>
+</div></main><div class="fixed bottom-24 right-margin z-50"><button aria-label="Tambah Tugas" class="w-14 h-14 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-[3px_3px_0_#171717] ring-4 ring-secondary-fixed active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all" type="button"><svg class="w-7 h-7 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg></button></div><nav class="fixed bottom-0 w-full z-50 pb-safe bg-comic-canvas/95 backdrop-blur-xl shadow-[0_-2px_10px_rgba(0,0,0,0.04)]" data-active-classes="bg-secondary-container text-border-ink font-bold shadow-[2px_2px_0_#171717] scale-105"><div class="h-20 px-space-xs flex items-center justify-around"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[48px] px-space-xs py-1 rounded-xl transition-all bg-secondary-container text-border-ink font-bold shadow-[2px_2px_0_#171717] scale-105" data-path="beranda" href="#"><svg class="w-6 h-6 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg><span class="font-label-sm text-caption mt-0.5">Beranda</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[48px] px-space-xs py-1 rounded-xl text-text-muted transition-all" data-path="tugas" href="#"><svg class="w-6 h-6 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="m9 11 3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg><span class="font-label-sm text-caption mt-0.5">Tugas</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[48px] px-space-xs py-1 rounded-xl text-text-muted transition-all" data-path="kalender" href="#"><svg class="w-6 h-6 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg><span class="font-label-sm text-caption mt-0.5">Kalender</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[48px] px-space-xs py-1 rounded-xl text-text-muted transition-all" data-path="pengaturan" href="#"><svg class="w-6 h-6 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg><span class="font-label-sm text-caption mt-0.5">Pengaturan</span></a></div></nav>
+
+
+
+</body></html>

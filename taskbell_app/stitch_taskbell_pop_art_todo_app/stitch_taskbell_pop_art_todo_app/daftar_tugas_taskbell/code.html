@@ -1,0 +1,305 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"><meta content="mobile_tab" name="shell-type"><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#FFF9EC;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "comic-canvas": "#FFF9EC", "error-container": "#ffdad6", "tertiary": "#8e4a00", "status-info": "#245CB5", "status-success": "#197447", "primary-container": "#2772dc", "border-ink": "#171717", "status-error": "#B42335", "secondary-fixed": "#ffdea7", "secondary-fixed-dim": "#ffbb18", "on-secondary-fixed": "#271900", "accent-purple": "#8429D8", "primary": "#0059b9", "on-primary": "#ffffff", "surface-container-lowest": "#ffffff", "status-warning": "#8A4B00", "surface-container-highest": "#e5e2e1", "on-error": "#ffffff", "inverse-on-surface": "#f3f0ef", "secondary-container": "#fdb700", "surface-tint": "#005bbe", "on-tertiary-container": "#fffbff", "on-surface-variant": "#424753", "text-muted": "#555555", "surface-container-low": "#f6f3f2", "primary-fixed-dim": "#acc7ff", "accent-red": "#E91E4B", "on-error-container": "#93000a", "comic-surface": "#FFFFFF", "tertiary-container": "#b25f00", "on-primary-container": "#fefcff", "tertiary-fixed": "#ffdcc4", "surface-container": "#f0eded", "on-secondary-container": "#6a4b00", "on-tertiary-fixed-variant": "#6f3900", "on-primary-fixed": "#001a40", "on-secondary-fixed-variant": "#5e4200", "inverse-surface": "#313030", "inverse-primary": "#acc7ff", "outline": "#727784", "surface-variant": "#e5e2e1", "outline-variant": "#c2c6d5", "error": "#ba1a1a", "primary-fixed": "#d7e2ff", "on-surface": "#1c1b1b", "surface-dim": "#dcd9d9", "tertiary-fixed-dim": "#ffb77f", "on-tertiary-fixed": "#2f1500", "on-primary-fixed-variant": "#004491", "on-background": "#1c1b1b", "surface-bright": "#fcf9f8", "surface-container-high": "#eae7e7", "surface": "#fcf9f8", "secondary": "#7c5800", "on-tertiary": "#ffffff", "on-secondary": "#ffffff", "background": "#fcf9f8" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1rem", "space-sm": "0.5rem", "space-xl": "2rem", "margin": "1rem", "space-md": "1rem", "gutter-tablet": "1.5rem", "space-xs": "0.25rem", "space-2xl": "3rem", "space-lg": "1.5rem", "margin-tablet": "1.5rem" }, "fontFamily": { "headline-sm": ["Plus Jakarta Sans"], "caption": ["DM Sans"], "headline-md": ["Plus Jakarta Sans"], "label-sm": ["DM Sans"], "body-lg": ["DM Sans"], "headline-lg": ["Plus Jakarta Sans"], "display": ["Plus Jakarta Sans"], "body-sm": ["DM Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "label-lg": ["DM Sans"], "body-md": ["DM Sans"], "label-md": ["DM Sans"] }, "fontSize": { "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "700" }], "caption": ["11px", { "lineHeight": "14px", "fontWeight": "500" }], "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "500" }], "headline-lg": ["30px", { "lineHeight": "36px", "fontWeight": "800" }], "display": ["38px", { "lineHeight": "44px", "fontWeight": "800" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "800" }], "label-lg": ["14px", { "lineHeight": "18px", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "700" }] } } } }</script>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet"></head><body class="bg-comic-canvas text-on-surface min-h-screen flex flex-col font-body-md"><header class="fixed top-0 w-full z-50 bg-comic-canvas/90 backdrop-blur-xl pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="TaskBell Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1UFb3ioSWTxOqiTfX7B8OkOyawbvxf_EAn27VVpRGFsQpV3-8WpQEjg5e6pKIgqSPOTL4oOw8dcIrpB8scI8cTbyAYZTSXxEYN5kJ9KQD7cVxp8jPJoVgMAh7YIdJokzmfT3j8X_t43eIKkEBk8_L_Ij6K4Vk7On8sDZT9o2K_FoWHiSD3n6CHiMw3b3qAWN71ciLTm8_nqFtQ5c1ZoTWznjl2BrKL9Lt5IS9Td30cqR_fe6LIxjPJqGyE"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-border-ink leading-none tracking-tight">TaskBell</span><span class="font-caption text-caption text-text-muted leading-tight">Tugas</span></div></div><div class="flex items-center gap-space-sm"><div class="flex items-center gap-1 px-2 py-1 bg-surface-container-lowest rounded-full shadow-[2px_2px_0_#171717] border border-border-ink"><svg class="w-3.5 h-3.5 text-status-success stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path><path d="m9 13 2 2 4-4"></path></svg><span class="font-caption text-caption text-border-ink font-bold">Sinkron</span></div><div class="w-8 h-8 rounded-full border border-border-ink overflow-hidden shadow-[2px_2px_0_#171717] flex items-center justify-center bg-comic-surface"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyoa7XgXVsPKQkcQQLl9aRj_ITyRCbYYWYIExKNJIePKauDI0GkAIizi1ITRPwu4JbuVQKdFBsWVoWcjQNyYg1iH4YryYgZ1I-YbLv4uGeWH13PgTRe5UlTjtGKFBLj3DKjRhaRbZWYc1TKHsxXLLmJGiOIEK4S0y9IuQXgiMUM-by2EZkIOFLZAGSfuIcRMM5SVais95ZlYq3W-YqcwtEJRooDzZUYXCHwr_JNQ9v1yK_w8sEwFJAGw"></div></div></div></header><main class="flex-1 w-full px-gutter pt-16 pb-28 bg-comic-canvas"><div class="flex flex-col w-full pb-8">
+<!-- Search & Filter Panel -->
+<section class="flex flex-col gap-space-sm mb-4">
+<div class="flex items-center gap-space-sm">
+<div class="relative flex-1">
+<input class="w-full h-12 bg-surface-container-lowest text-on-surface font-body-md text-body-md rounded-xl pl-11 pr-4 shadow-md focus:shadow-xl focus:bg-surface-bright transition-all outline-none" placeholder="Cari tugas..." type="text">
+<div class="absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24">
+<circle cx="11" cy="11" r="8"></circle>
+<line x1="21" x2="16.65" y1="21" y2="16.65"></line>
+</svg>
+</div>
+</div>
+<button aria-label="Filter dan Urutkan" class="h-12 w-12 flex-shrink-0 bg-surface-container-lowest text-on-surface rounded-xl shadow-md flex items-center justify-center active:scale-95 transition-all" id="btn-filter-toggle" type="button">
+<svg class="w-5 h-5 text-on-surface" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24">
+<polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+</svg>
+</button>
+</div>
+<!-- Status Tabs Scrollable -->
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-1 -mx-gutter px-gutter">
+<button class="flex-shrink-0 px-3.5 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-sm transition-all" type="button">
+        Semua (12)
+      </button>
+<button class="flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-all" type="button">
+        Hari Ini (5)
+      </button>
+<button class="flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-all" type="button">
+        Mendatang (4)
+      </button>
+<button class="flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-all" type="button">
+        Terlambat (1)
+      </button>
+<button class="flex-shrink-0 px-3.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-all" type="button">
+        Selesai (7)
+      </button>
+</div>
+<!-- Category & Priority Pills -->
+<div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar -mx-gutter px-gutter pt-0.5">
+<span class="font-caption text-caption text-on-surface-variant mr-1 flex-shrink-0">Label:</span>
+<button class="flex-shrink-0 px-2.5 py-1 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm flex items-center gap-1" type="button">
+<span class="w-2 h-2 rounded-full bg-accent-purple"></span>
+        Kuliah
+      </button>
+<button class="flex-shrink-0 px-2.5 py-1 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm flex items-center gap-1" type="button">
+<span class="w-2 h-2 rounded-full bg-status-info"></span>
+        Pribadi
+      </button>
+<button class="flex-shrink-0 px-2.5 py-1 rounded-lg bg-surface-container-low text-on-surface font-label-sm text-label-sm flex items-center gap-1" type="button">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+        Kerja
+      </button>
+<button class="flex-shrink-0 px-2.5 py-1 rounded-lg bg-error-container text-on-error-container font-label-sm text-label-sm flex items-center gap-1" type="button">
+<svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+        Tinggi
+      </button>
+<button class="flex-shrink-0 px-2.5 py-1 rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm" type="button">
+        Sedang
+      </button>
+<button class="flex-shrink-0 px-2.5 py-1 rounded-lg bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm" type="button">
+        Rendah
+      </button>
+</div>
+</section><div class="flex items-center justify-between px-3 py-1.5 mb-3 bg-surface-container-high rounded-lg border border-border-ink/20"><div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm"><svg class="w-3.5 h-3.5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" x2="12" y1="16" y2="12"></line><line x1="12" x2="12.01" y1="8" y2="8"></line></svg><span class="">Data Demonstrasi / Mock Data</span></div><span class="font-caption text-caption text-text-muted">Mode Pratinjau MVP</span></div>
+<!-- Motivational Banner Pop-Comic Halftone -->
+<div class="relative overflow-hidden rounded-xl bg-secondary-fixed text-on-secondary-fixed p-3.5 mb-4 shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-3 relative z-10">
+<div class="w-9 h-9 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-headline-sm text-headline-sm flex-shrink-0"><svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg></div>
+<div>
+<h2 class="font-label-lg text-label-lg leading-tight text-on-secondary-fixed">Fokus Hari Ini!</h2>
+<p class="font-body-sm text-body-sm text-on-secondary-fixed-variant leading-tight">Selesaikan 2 tugas tersisa untuk pertahankan rekor 7 hari.</p>
+</div>
+</div>
+<div class="absolute -right-4 -bottom-4 opacity-15 pointer-events-none">
+<svg class="w-24 h-24 text-on-secondary-fixed" fill="currentColor" viewBox="0 0 100 100">
+<pattern height="10" id="comic-dots" patternUnits="userSpaceOnUse" width="10" x="0" y="0">
+<circle cx="2" cy="2" r="2"></circle>
+</pattern>
+<rect fill="url(#comic-dots)" height="100" width="100"></rect>
+</svg>
+</div>
+</div>
+<!-- Interactive Task List -->
+<div class="flex flex-col gap-3">
+<!-- Card 1: Terlambat -->
+<article class="bg-surface-container-lowest rounded-xl p-4 shadow-md transition-all relative overflow-hidden" data-task-id="task-1">
+<div class="flex items-start gap-3">
+<!-- Comic Square Checkbox -->
+<button aria-label="Tandai Selesai" class="task-checkbox mt-0.5 w-6 h-6 rounded-lg bg-surface-container-low flex items-center justify-center flex-shrink-0 transition-all hover:bg-primary/20" type="button">
+<svg class="w-4 h-4 text-on-primary hidden check-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewBox="0 0 24 24">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+</button>
+<!-- Content Area -->
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2 mb-1">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-error text-on-error font-label-sm text-label-sm">
+<svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+<circle cx="12" cy="12" r="10"></circle>
+<line x1="12" x2="12" y1="8" y2="12"></line>
+<line x1="12" x2="12.01" y1="16" y2="16"></line>
+</svg>
+              Terlambat!
+            </span>
+<span class="px-2 py-0.5 rounded-full bg-accent-purple/15 text-accent-purple font-label-sm text-label-sm">
+              Kuliah
+            </span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-snug task-title">
+            Laporan Praktikum Basis Data
+          </h3>
+<div class="flex flex-wrap items-center gap-y-1 gap-x-3 mt-2 text-on-surface-variant font-body-sm text-body-sm"><div class="flex items-center gap-1 text-error font-label-sm text-label-sm"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg><span class="">Hari ini, 23:59 WIB</span></div><div class="flex items-center gap-1 text-primary"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 2L11 13"></path><path d="M22 2l-7 20-4-9-9-4 20-7z"></path></svg><span class="font-caption text-caption">Pengingat Otomatis</span></div></div>
+<!-- Action Drawer Buttons (Quick Row) -->
+<div class="flex items-center gap-2 mt-3 pt-2.5 bg-surface-container-low/50 -mx-4 -mb-4 px-4 py-2.5 rounded-b-xl">
+<button class="btn-preview-trigger flex-1 py-1.5 px-2 rounded-lg bg-surface-container-highest text-on-surface font-label-sm text-label-sm flex items-center justify-center gap-1 active:scale-95 transition-all" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+              Rincian
+            </button>
+<button class="py-1.5 px-2.5 rounded-lg bg-surface-container-highest text-on-surface font-label-sm text-label-sm flex items-center justify-center gap-1 active:scale-95 transition-all" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+              Edit
+            </button>
+<button class="py-1.5 px-2.5 rounded-lg bg-error-container text-on-error-container font-label-sm text-label-sm flex items-center justify-center gap-1 active:scale-95 transition-all" type="button">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+              Hapus
+            </button>
+</div>
+</div>
+</div>
+</article>
+<!-- Card 2: Hari Ini (Prioritas Tinggi) -->
+<article class="bg-surface-container-lowest rounded-xl p-4 shadow-md transition-all" data-task-id="task-2">
+<div class="flex items-start gap-3">
+<button aria-label="Tandai Selesai" class="task-checkbox mt-0.5 w-6 h-6 rounded-lg bg-surface-container-low flex items-center justify-center flex-shrink-0 transition-all hover:bg-primary/20" type="button">
+<svg class="w-4 h-4 text-on-primary hidden check-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewBox="0 0 24 24">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+</button>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2 mb-1">
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">
+                Hari Ini
+              </span>
+<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm flex items-center gap-0.5">
+<svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path></svg>
+                Tinggi
+              </span>
+</div>
+<div class="flex items-center gap-1 text-status-success font-caption text-caption">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+<span class="">Tersinkron</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-snug task-title">
+            Presentasi Final TaskBell UI
+          </h3>
+<!-- Subtasks Progress Bar -->
+
+<div class="flex items-center justify-between mt-3 pt-2 text-on-surface-variant font-body-sm text-body-sm"><div class="flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span class="">Hari ini, 15:00 WIB</span></div><span class="px-2 py-0.5 rounded-md bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">Prioritas Utama</span></div>
+<div class="flex items-center gap-2 mt-3 pt-2.5 bg-surface-container-low/50 -mx-4 -mb-4 px-4 py-2.5 rounded-b-xl"><button class="btn-preview-trigger flex-1 py-1.5 px-2 rounded-lg bg-surface-container-highest text-on-surface font-label-sm text-label-sm flex items-center justify-center gap-1 active:scale-95 transition-all" type="button"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg> Rincian</button><button class="py-1.5 px-2.5 rounded-lg bg-surface-container-highest text-on-surface font-label-sm text-label-sm flex items-center justify-center gap-1 active:scale-95 transition-all" type="button"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg> Edit</button><button class="py-1.5 px-2.5 rounded-lg bg-error-container text-on-error-container font-label-sm text-label-sm flex items-center justify-center gap-1 active:scale-95 transition-all" type="button"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg> Hapus</button></div></div>
+</div>
+</article>
+<!-- Card 3: Mendatang -->
+<article class="bg-surface-container-lowest rounded-xl p-4 shadow-md transition-all" data-task-id="task-3">
+<div class="flex items-start gap-3">
+<button aria-label="Tandai Selesai" class="task-checkbox mt-0.5 w-6 h-6 rounded-lg bg-surface-container-low flex items-center justify-center flex-shrink-0 transition-all hover:bg-primary/20" type="button">
+<svg class="w-4 h-4 text-on-primary hidden check-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" viewBox="0 0 24 24">
+<polyline points="20 6 9 17 4 12"></polyline>
+</svg>
+</button>
+<div class="flex-1 min-w-0">
+<div class="flex items-center justify-between gap-2 mb-1">
+<div class="flex items-center gap-1.5">
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+                Besok
+              </span>
+<span class="px-2 py-0.5 rounded-full bg-status-info/10 text-status-info font-label-sm text-label-sm">
+                Pribadi
+              </span>
+</div>
+<div class="flex items-center gap-1 text-status-warning font-caption text-caption">
+<svg class="w-3.5 h-3.5 animate-spin" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
+</svg>
+<span class="">Antre Sync</span>
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface leading-snug task-title">
+            Beli Buku Catatan &amp; Alat Tulis
+          </h3>
+<div class="flex items-center justify-between mt-2.5 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-1">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect>
+<line x1="16" x2="16" y1="2" y2="6"></line>
+<line x1="8" x2="8" y1="2" y2="6"></line>
+<line x1="3" x2="21" y1="10" y2="10"></line>
+</svg>
+<span class="">Besok, 10:00 WIB</span>
+</div>
+<span class="px-2 py-0.5 rounded-md bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm">
+              Prioritas Rendah
+            </span>
+</div>
+<div class="flex items-center gap-2 mt-3 pt-2.5 bg-surface-container-low/50 -mx-4 -mb-4 px-4 py-2.5 rounded-b-xl"><button class="btn-preview-trigger flex-1 py-1.5 px-2 rounded-lg bg-surface-container-highest text-on-surface font-label-sm text-label-sm flex items-center justify-center gap-1 active:scale-95 transition-all" type="button"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg> Rincian</button><button class="py-1.5 px-2.5 rounded-lg bg-surface-container-highest text-on-surface font-label-sm text-label-sm flex items-center justify-center gap-1 active:scale-95 transition-all" type="button"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg> Edit</button><button class="py-1.5 px-2.5 rounded-lg bg-error-container text-on-error-container font-label-sm text-label-sm flex items-center justify-center gap-1 active:scale-95 transition-all" type="button"><svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg> Hapus</button></div></div>
+</div>
+</article>
+</div>
+<!-- Quick Preview Comic Panel (Task Detail Sheet Modal) -->
+<div class="hidden mt-6 bg-surface-container-lowest rounded-xl p-4 shadow-xl" id="detail-panel">
+<div class="flex items-center justify-between pb-3 mb-3 bg-surface-container-low -mx-4 -mt-4 px-4 pt-3 rounded-t-xl">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary-container"></span>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Pratinjau Tugas Terpilih</h4>
+</div>
+<button class="w-7 h-7 rounded-lg bg-surface-container-highest text-on-surface flex items-center justify-center active:scale-95 transition-all" id="btn-close-detail" type="button">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
+</button>
+</div>
+<div class="space-y-3">
+<div>
+<span class="font-caption text-caption text-on-surface-variant uppercase font-bold tracking-wider">Judul &amp; Deskripsi</span>
+<p class="font-body-lg text-body-lg text-on-surface font-bold mt-0.5">Laporan Praktikum Basis Data</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+          Modul 4: Relasi ERD ke Skema Relasional dan Normalisasi 3NF. Format PDF maksimal 10MB di portal kampus.
+        </p>
+</div>
+<!-- Checklist Section -->
+
+<!-- Meta Info Tags Grid -->
+<div class="grid grid-cols-2 gap-2 pt-1 font-body-sm text-body-sm">
+<div class="bg-surface-container-low p-2 rounded-lg flex items-center gap-2">
+<svg class="w-4 h-4 text-primary flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path>
+</svg>
+<div class="min-w-0">
+<span class="font-caption text-caption text-on-surface-variant block leading-tight">Pengulangan</span>
+<span class="font-label-sm text-label-sm text-on-surface truncate">Tiap Minggu</span>
+</div>
+</div>
+<div class="bg-surface-container-low p-2 rounded-lg flex items-center gap-2">
+<svg class="w-4 h-4 text-status-info flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+<path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+</svg>
+<div class="min-w-0">
+<span class="font-caption text-caption text-on-surface-variant block leading-tight">Pengingat Bot</span>
+<span class="font-label-sm text-label-sm text-on-surface truncate">30 menit sblm</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple micro-interactions for Task Cards & Checklist Preview
+  document.querySelectorAll('.task-checkbox').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const checkIcon = btn.querySelector('.check-icon');
+      const article = btn.closest('article');
+      const title = article.querySelector('.task-title');
+      
+      const isChecked = !checkIcon.classList.contains('hidden');
+      if (isChecked) {
+        checkIcon.classList.add('hidden');
+        btn.classList.remove('bg-primary');
+        btn.classList.add('bg-surface-container-low');
+        title.classList.remove('line-through', 'text-on-surface-variant');
+        title.classList.add('text-on-surface');
+      } else {
+        checkIcon.classList.remove('hidden');
+        btn.classList.add('bg-primary');
+        btn.classList.remove('bg-surface-container-low');
+        title.classList.add('line-through', 'text-on-surface-variant');
+        title.classList.remove('text-on-surface');
+      }
+    });
+  });
+
+  const detailPanel = document.getElementById('detail-panel');
+  const closeDetail = document.getElementById('btn-close-detail');
+  
+  document.querySelectorAll('.btn-preview-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      detailPanel.classList.remove('hidden');
+      detailPanel.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  if (closeDetail) {
+    closeDetail.addEventListener('click', () => {
+      detailPanel.classList.add('hidden');
+    });
+  }
+</script></main><div class="fixed bottom-24 right-margin z-50"><button aria-label="Tambah Tugas" class="w-14 h-14 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-[3px_3px_0_#171717] ring-4 ring-secondary-fixed active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all" type="button"><svg class="w-7 h-7 stroke-current" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewBox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg></button></div><nav class="fixed bottom-0 w-full z-50 pb-safe bg-comic-canvas/95 backdrop-blur-xl shadow-[0_-2px_10px_rgba(0,0,0,0.04)]" data-active-classes="bg-secondary-container text-border-ink font-bold shadow-[2px_2px_0_#171717] scale-105"><div class="h-20 px-space-xs flex items-center justify-around"><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[48px] px-space-xs py-1 rounded-xl text-text-muted transition-all" data-path="beranda" href="#"><svg class="w-6 h-6 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg><span class="font-label-sm text-caption mt-0.5">Beranda</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[48px] px-space-xs py-1 rounded-xl transition-all bg-secondary-container text-border-ink font-bold shadow-[2px_2px_0_#171717] scale-105" data-path="tugas" href="#"><svg class="w-6 h-6 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="m9 11 3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg><span class="font-label-sm text-caption mt-0.5">Tugas</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[48px] px-space-xs py-1 rounded-xl text-text-muted transition-all" data-path="kalender" href="#"><svg class="w-6 h-6 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><rect height="18" rx="2" ry="2" width="18" x="3" y="4"></rect><line x1="16" x2="16" y1="2" y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line x1="3" x2="21" y1="10" y2="10"></line></svg><span class="font-label-sm text-caption mt-0.5">Kalender</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[48px] px-space-xs py-1 rounded-xl text-text-muted transition-all" data-path="pengaturan" href="#"><svg class="w-6 h-6 stroke-current fill-none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg><span class="font-label-sm text-caption mt-0.5">Pengaturan</span></a></div></nav>
+
+
+
+</body></html>

@@ -1,0 +1,44 @@
+# Secrets
+.env
+.env.*
+!.env.example
+*.keystore
+*.jks
+*.p12
+*.pem
+*.key
+keystore.properties
+
+# Node
+node_modules/
+dist/
+coverage/
+npm-debug.log*
+
+# Flutter / Dart
+.dart_tool/
+.packages
+.flutter-plugins
+.flutter-plugins-dependencies
+build/
+*.iml
+
+# IDE
+.idea/
+.vscode/
+
+# Python
+.venv/
+venv/
+__pycache__/
+
+# Artefak lokal
+*.log
+*.backup
+*.bak
+taskbell-log.txt
+stitch_*.zip
+
+# OS
+.DS_Store
+Thumbs.db
