@@ -16,6 +16,7 @@ Diperbarui: 20 Oktober 2026
 - [x] Sinkronisasi offline-first (push/pull, idempoten, retry)
 - [x] Notifikasi lokal untuk tenggat
 - [x] Pengingat Telegram dari server (token terenkripsi)
+- [x] Klaim pengiriman pengingat atomik — aman untuk beberapa instance server
 - [x] Backup/restore JSON dengan validasi, pratinjau, dan pemilih file
 - [x] Database lokal terenkripsi SQLCipher + migrasi otomatis dari DB lama
 - [x] Migrasi database Prisma + baseline

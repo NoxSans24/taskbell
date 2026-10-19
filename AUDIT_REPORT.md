@@ -51,8 +51,9 @@ implementasi saat itu.
    ditolak dengan pesan yang jelas.
 3. **Database lokal terenkripsi**, tetapi **file backup JSON tidak**; backup
    yang dibagikan berisi data terbaca.
-4. **Scheduler pengingat** berasumsi satu instance server. Multi-instance dapat
-   mengirim ganda sebelum baris dedup tercatat.
+4. **Scheduler pengingat** memakai klaim atomik (unique constraint) sehingga
+   aman untuk beberapa instance; klaim yang tertinggal dipulihkan setelah
+   10 menit.
 5. **`npm audit` penuh** (termasuk devDependencies) masih melaporkan isu dari
    toolchain Jest; tidak ikut ke produksi.
 6. **Font** dibundel sebagai variable font OFL; bobot diatur lewat

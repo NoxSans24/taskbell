@@ -1,9 +1,10 @@
-import { PrismaClient } from '@prisma/client';
+import { Prisma, PrismaClient } from '@prisma/client';
 import { decryptToken } from './token_cipher';
 
 const CATCH_UP_MS = 10 * 60 * 1000;
 const LOOK_AHEAD_MS = 60 * 1000;
 const MAX_PER_USER_PER_RUN = 10;
+const STALE_CLAIM_MS = 10 * 60 * 1000;
 
 export interface TelegramSendInput {
   botToken: string;
@@ -74,6 +75,13 @@ export async function runReminderCycle(
   const windowStart = new Date(now.getTime() - CATCH_UP_MS);
   const windowEnd = new Date(now.getTime() + LOOK_AHEAD_MS);
 
+  // Klaim yang tertinggal karena proses berhenti di tengah pengiriman
+  // dikembalikan agar bisa dicoba lagi pada siklus berikutnya.
+  const staleBefore = new Date(now.getTime() - STALE_CLAIM_MS);
+  await prisma.reminderDelivery.deleteMany({
+    where: { status: 'sending', sentAt: { lt: staleBefore } },
+  });
+
   const links = await prisma.telegramLink.findMany({
     where: { enabled: true },
   });
@@ -104,17 +112,31 @@ export async function runReminderCycle(
       const dueAt = task.dueDate;
       if (!dueAt) continue;
 
-      const alreadySent = await prisma.reminderDelivery.findUnique({
-        where: {
-          userId_taskSyncId_dueAt: {
+      // Klaim atomik: hanya satu instance yang berhasil membuat baris dengan
+      // kunci unik (userId, taskSyncId, dueAt). Instance lain mendapat P2002
+      // dan melewati tugas ini, sehingga pesan tidak terkirim ganda.
+      const claimed = await prisma.reminderDelivery
+        .create({
+          data: {
             userId: link.userId,
             taskSyncId: task.syncId,
             dueAt,
+            status: 'sending',
           },
-        },
-      });
+          select: { id: true },
+        })
+        .then(() => true)
+        .catch((error: unknown) => {
+          if (
+            error instanceof Prisma.PrismaClientKnownRequestError &&
+            error.code === 'P2002'
+          ) {
+            return false;
+          }
+          throw error;
+        });
 
-      if (alreadySent) {
+      if (!claimed) {
         skipped += 1;
         continue;
       }
@@ -126,21 +148,32 @@ export async function runReminderCycle(
       });
 
       if (result.ok) {
-        try {
-          await prisma.reminderDelivery.create({
-            data: {
+        await prisma.reminderDelivery.update({
+          where: {
+            userId_taskSyncId_dueAt: {
               userId: link.userId,
               taskSyncId: task.syncId,
               dueAt,
-              status: 'sent',
             },
-          });
-        } catch {
-          // Pengiriman paralel dapat membuat baris yang sama; abaikan.
-        }
+          },
+          data: { status: 'sent' },
+        });
         sent += 1;
         continue;
       }
+
+      // Gagal sementara: lepaskan klaim agar dicoba pada siklus berikutnya.
+      await prisma.reminderDelivery
+        .delete({
+          where: {
+            userId_taskSyncId_dueAt: {
+              userId: link.userId,
+              taskSyncId: task.syncId,
+              dueAt,
+            },
+          },
+        })
+        .catch(() => undefined);
 
       failed += 1;
 

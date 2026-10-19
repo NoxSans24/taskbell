@@ -497,6 +497,35 @@ describe('TaskBell Server API Suite', () => {
       expect(retry.sent).toBe(1);
     });
 
+    it('sends only once when two cycles run concurrently', async () => {
+      await prisma.reminderDelivery.deleteMany({
+        where: { userId: testUserId },
+      });
+
+      const send = jest.fn().mockImplementation(async () => {
+        await new Promise((resolve) => setTimeout(resolve, 50));
+        return { ok: true };
+      });
+
+      const [first, second] = await Promise.all([
+        runReminderCycle(prisma, { now: dueDate, send }),
+        runReminderCycle(prisma, { now: dueDate, send }),
+      ]);
+
+      expect(first.sent + second.sent).toBe(1);
+      expect(send).toHaveBeenCalledTimes(1);
+
+      const deliveries = await prisma.reminderDelivery.count({
+        where: { userId: testUserId, taskSyncId: reminderSyncId },
+      });
+      expect(deliveries).toBe(1);
+
+      const stored = await prisma.reminderDelivery.findFirst({
+        where: { userId: testUserId, taskSyncId: reminderSyncId },
+      });
+      expect(stored?.status).toBe('sent');
+    });
+
     it('rejects malformed Telegram credentials', async () => {
       const res = await request(app)
         .put('/telegram/link')

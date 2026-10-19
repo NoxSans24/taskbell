@@ -178,6 +178,9 @@ ke GitHub.
 - Pengingat Telegram dikirim server setiap menit untuk tugas yang **sudah
   tersinkron** dan tenggatnya tiba. Tugas yang belum pernah disinkronkan tetap
   mendapat notifikasi lokal, bukan Telegram.
+- Pengiriman pengingat diklaim lewat constraint unik, sehingga beberapa instance
+  server tidak mengirim pesan ganda. Klaim yang tertinggal dipulihkan otomatis
+  setelah 10 menit.
 - Data lokal dienkripsi SQLCipher per akun. **File backup JSON tidak
   dienkripsi**, jadi perlakukan file backup seperti data sensitif.
 - Menghapus data aplikasi atau kehilangan secure storage membuat database lokal
